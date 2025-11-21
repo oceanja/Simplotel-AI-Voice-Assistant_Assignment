@@ -1,15 +1,33 @@
-import json
+import sqlite3
+import difflib
 
-def load_faq():
-    with open("data/faq.json", "r") as file:
-        return json.load(file)
+DB_PATH = "simplotel.db"
 
-def get_response(user_text):
-    user_text = user_text.lower()
-    faq_data = load_faq()
 
-    for key in faq_data:
-        if key in user_text:
-            return faq_data[key]
+def get_best_response(user_text):
+    user_text = user_text.lower().strip()
 
-    return faq_data["default"]
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    cursor.execute("SELECT question, answer FROM faq")
+    faqs = cursor.fetchall()
+
+    conn.close()
+
+    questions = [q[0] for q in faqs]
+
+   
+    closest_match = difflib.get_close_matches(user_text, questions, n=1, cutoff=0.4)
+
+    if closest_match:
+        for q, a in faqs:
+            if q == closest_match[0]:
+                return a
+
+    for q, a in faqs:
+        if q == "default":
+            return a
+
+    return "Sorry, I couldn't understand that."
+
+get_response = get_best_response

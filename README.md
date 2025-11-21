@@ -58,8 +58,10 @@ It is tailored to answer Simplotel-specific questions and can easily be extended
 - Custom NLP Intent Matching Logic
 
 **Data Handling**
-- JSON knowledge base (`faq.json`)
+- SQLite Database (`simplotel.db`)
+- SQL queries for FAQ retrieval
 - Chat memory using Streamlit state
+
 
 **Supporting Libraries**
 - `sounddevice`
@@ -81,8 +83,9 @@ AI_VOICE_BOT/
 ├── README.md → Documentation
 │
 ├── data/
-│ └── faq.json → Simplotel questions & answers
+│   └── faq.json   → Used to populate database (one-time)
 │
+├── simplotel.db   → Main SQLite database
 ├── utils/
 │ ├── speech_to_text.py → Voice input (Whisper)
 │ ├── text_to_speech.py → Audio output (gTTS)
