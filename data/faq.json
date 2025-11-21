@@ -1,0 +1,17 @@
+{
+  "hi": "Hello! Welcome to Simplotel's AI Voice Assistant. How can I help you today?",
+  "hello": "Hi there! You're now speaking with Simplotel's intelligent assistant.",
+  "what does simplotel do": "Simplotel is a SaaS company that helps hotels grow direct bookings through our e-commerce and booking solutions.",
+  "where is simplotel located": "Simplotel is headquartered in Bangalore, India.",
+  "how many hotels do you serve": "We serve more than 3000 hotels across 26 countries.",
+  "what is simplotel": "Simplotel is like Shopify for Hotels, helping them sell rooms directly through powerful websites and booking systems.",
+  "who funds simplotel": "Simplotel is funded by Go-MMT, India's largest online travel agency.",
+  "what do you build": "We build booking engines, hotel websites, channel integrations and scalable backend systems.",
+  "what is your tech stack": "We use technologies like Python, Django, MySQL, REST APIs and distributed systems.",
+  "working hours": "Our general working hours are from 9 AM to 6 PM, Monday to Friday.",
+  "intern role": "As an intern, you will work on backend systems using Python and Django and build scalable APIs.",
+  "what is your location": "Our office is located in Bangalore, India.",
+  "bye": "Thank you for visiting Simplotel. Have a great day!",
+  "default": "Sorry, I couldn't understand that. Could you please rephrase your question?"
+}
+
