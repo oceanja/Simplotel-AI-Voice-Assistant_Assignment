@@ -71,6 +71,7 @@ It is tailored to answer Simplotel-specific questions and can easily be extended
 ---
 
 ## 📂 Project Structure
+```
 
 AI_VOICE_BOT/
 │
@@ -90,6 +91,8 @@ AI_VOICE_BOT/
 └── audio/
 ├── input.wav
 └── output.mp3
+
+```
 
 
 ---
