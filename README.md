@@ -10,7 +10,7 @@ This project demonstrates core backend engineering skills, AI integration, and r
 
 ## 🎬 Live Working Demo (Video)
 
-👉 https://drive.google.com/drive/u/0/folders/1UrkH2G1CvG071cqtvOqCDuayMwgYfkpv
+👉 https://drive.google.com/drive/folders/1UrkH2G1CvG071cqtvOqCDuayMwgYfkpv?usp=sharing
 
 
 ## 🚀 What This Project Does
