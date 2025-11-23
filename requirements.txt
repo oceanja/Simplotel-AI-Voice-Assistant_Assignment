@@ -5,6 +5,6 @@ torchvision
 torchaudio
 gtts
 transformers
-sounddevice
 scipy
 numpy
+st_audiorec

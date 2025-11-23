@@ -1,15 +1,24 @@
-import sounddevice as sd
-import scipy.io.wavfile as wav
 import whisper
+import tempfile
+from st_audiorec import st_audiorec
 
-def record_audio(filename="audio/input.wav", duration=5, fs=44100):
-    print("🎤 Speak now...")
-    audio = sd.rec(int(duration * fs), samplerate=fs, channels=1)
-    sd.wait()
-    wav.write(filename, fs, audio)
-    print("✅ Audio recorded")
+model = whisper.load_model("base")
 
-def speech_to_text():
-    model = whisper.load_model("base")
-    result = model.transcribe("audio/input.wav")
-    return result["text"]
+def record_audio_streamlit():
+    audio_bytes = st_audiorec()
+
+    if audio_bytes is not None:
+        temp = tempfile.NamedTemporaryFile(delete=False, suffix=".wav")
+        temp.write(audio_bytes)
+        temp.close()
+        return temp.name
+
+    return None
+
+
+def speech_to_text(filepath):
+    if filepath:
+        result = model.transcribe(filepath)
+        return result["text"]
+
+    return ""
