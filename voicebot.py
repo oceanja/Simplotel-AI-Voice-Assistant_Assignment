@@ -1,19 +1,20 @@
-from utils.speech_to_text import record_audio_streamlit, speech_to_text
-from utils.text_to_speech import text_to_speech
+from utils.speech_to_text import record_audio, speech_to_text
+from utils.text_to_speech import speak
 from utils.nlp import get_response
 
 def run_voicebot():
-    filepath = record_audio_streamlit()
+    # 1. Record voice
+    record_audio()
 
-    if not filepath:
-        return "", "No audio recorded.", None
-
-    user_text = speech_to_text(filepath)
+    # 2. Convert speech to text
+    user_text = speech_to_text()
     print("User said:", user_text)
 
+    # 3. Get AI response
     response = get_response(user_text)
     print("Bot:", response)
 
-    audio_file = text_to_speech(response)
+    # 4. Convert text to speech
+    audio_file = speak(response)
 
     return user_text, response, audio_file

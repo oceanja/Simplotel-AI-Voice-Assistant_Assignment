@@ -7,4 +7,4 @@ gtts
 transformers
 scipy
 numpy
-st_audiorec
+sounddevice
